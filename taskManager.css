@@ -1,0 +1,450 @@
+body, button, html, input, select, textarea {
+  color: #4d4d4d;
+  font: 14px "Helvetica Neue",Helvetica,sans-serif;
+  line-height: 20px;
+}
+
+
+.newitem-title-wrapper {
+  margin: 4px 10px;
+}
+
+#trello-list-title-input {
+  width: 100%;
+  height: 22px;
+  margin-bottom: 5px;
+  border: none;
+  box-shadow: none;
+}
+
+.list {
+  background:whitesmoke;
+  border-radius: 7px;
+  border:1px solid whitesmoke;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 270px;
+  -ms-flex: 0 0 270px;
+  flex: 0 0 270px;
+  margin: 0 5px;
+  max-height: 100%;
+  position: relative;
+  width: 270px;
+  max-width: 270px;
+  cursor: pointer;
+}
+
+.list-title {
+  min-height: 19px;
+  padding: 8px 34px 8px 10px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.list-cards {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 4px;
+  padding: 0 4px;
+}
+
+.trello-new-card-title-input {
+  width: 100%;
+  margin-bottom: 4px;
+  overflow: hidden;
+  word-wrap: break-word;
+  resize: none;
+  height: 54px;
+  border: none;
+  box-shadow: none;
+}
+
+.card {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  overflow: auto;
+  padding: 6px 8px 4px;
+}
+
+.card div {
+  margin-bottom: 5px;
+}
+
+#card-edit {
+  display: none;
+  position: absolute;
+  width: 600px;
+  z-index: 15;
+  top: 50px;
+  left: 50%;
+  margin: 0px 0 0 -300px;
+  padding: 50px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+#card-edit div {
+  margin-bottom: 20px;
+}
+
+#card-edit label {
+  display: inline-block;
+  width: 100px;
+}
+
+#card-edit-inputs input {
+  width: 100%;
+}
+#card-edit-inputs ul{
+  padding: 0px;
+list-style:none;
+}
+#card-edit-inputs ul li{
+  margin-bottom: 10px;
+  }
+  #card-edit-inputs ul li .addTaskFormInputName{
+    width: 100%;
+  }
+  
+  #card-edit-inputs ul li .addTaskFormInputPriority{
+    width: 100%;
+  }
+  #card-edit-inputs ul li .custom-file-label{
+    width:100%;
+  }
+  
+
+#card-edit-close {
+  float: right;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.trash{
+  color:rgba(255, 0, 0, 0.521);
+  float:right;
+}
+
+#Done{
+  background-color: blue;;
+}
+
+
+
+#container-main {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 10;
+}
+
+.navigation-bar{
+  font-family: "Times New Roman", Georgia, Serif;
+  line-height: 60px;
+  font-size: 50px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.navigation-bar #app-title{
+  list-style: none;
+  border-bottom:1px solid rgb(0, 110, 255);
+  width:70%;
+  padding-top:8px;
+}
+.navigation-bar #app-title li{
+  display:inline-block;
+}
+
+#check{
+  float:left;
+  color:grey;  
+  padding-left: 75px;
+  font-size: 16px;
+}
+.fa-arrow-left{
+  color:grey;
+  font-weight: 100;
+}
+
+#check:hover{
+  cursor: pointer;
+}
+
+#checkTitle select{
+  border:none;
+  font-size:30px;  
+  margin-left: -105px;
+}
+
+#search{
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+#search:hover{
+  width:85%;
+}
+
+/* The sidebar menu */
+.sidebar {  
+  list-style: none;
+  height: 100%; 
+  width: 8%; 
+  position: fixed; 
+  z-index: 1;
+  top: 0; 
+  left: 0;
+  padding:0px;
+  background-color: rgb(0, 47, 255);
+}
+
+/* The navigation menu links */
+.sidebar li {
+  list-style: none;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar li:hover {
+  color: #f1f1f1;
+}
+
+.fa:hover{
+  cursor: pointer;
+}
+img:hover{
+cursor: pointer;
+}
+
+.fa-instagram{
+  font-size: 60px!important;
+  margin-bottom: 100px!important;
+  padding-top: 10px!important;
+}
+.fa-instagram:hover{
+  cursor: pointer;
+}
+
+.user{
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  list-style: none;
+}
+.user li{
+  display: inline-block;
+} 
+
+.user img{
+  width: 42px;
+  border-radius: 10px;
+}
+.user .fa{
+  font-size:25px;
+}
+.user .fa .fa-bell-o {
+  font-size:40px;
+} 
+.user input{
+  font-size:20px;
+  height:32px;
+  width:50%;
+  border:0px;
+}
+
+.stickers{
+  margin-left:8%;
+}
+.stickers li{
+  display: inline-block; 
+  list-style:none;
+}
+.stickers li span{
+  font-size: small;
+  padding:5px;
+  border-radius:3px;
+}
+.stickers li .user-static{   
+  background-color: rgba(211, 211, 211, 0.39);
+}
+.stickers li .star-static{
+  background-color: rgba(211, 211, 211, 0.39);;
+}
+.stickers li .clock-static{
+  color:rgb(255, 145, 0);
+  background-color:rgba(253, 165, 1, 0.274);
+   
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch-bar{
+  float:right;
+  margin-right: 22px;
+}
+.switch-text{
+  font-size:14px;
+  color:rgb(184, 181, 181);
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  left: 5px;
+  right: 0px;
+  bottom: 7px;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+    width: 26px;
+    left: 0px;
+    bottom: 0px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+#card-edit-close img {
+  width: 20px;
+  height: 20px;
+}
+
+#card-edit-delete {
+  float: left;
+}
+
+#card-edit-submit {
+  float: right;
+}
+
+#board{
+  margin-left:10%;
+}
+
+#trello-title-board {
+  padding: 10px 8px;
+  font-size: 18px;
+  line-height: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+#trello-canvas-board {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap:wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+#add-task-form {
+  position: absolute;
+  right: 25px;
+  bottom:10px;
+  display: flex;
+  float:right;
+}
+
+#add-task-form #add-task {
+  background: #4786FF;
+  border: none;
+  border-radius: 26px;
+  width: 50px;
+  height: 50px;
+  font-family: Lato;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+#add-task-form #add-task:focus {
+  outline: 0;
+}
+#add-task-form #add-task:hover {
+  box-shadow: 0px 4px 20px rgba(71, 134, 255, 0.5);
+  cursor: pointer;
+}
+
+
