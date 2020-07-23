@@ -11,7 +11,7 @@ The user can perform following tasks -
 7) UI is responsive for all devices.
 
 Languages used:
-[I] Template-
+[I] Template:
 1)HTML
 2)CSS
 3)Bootstrap
