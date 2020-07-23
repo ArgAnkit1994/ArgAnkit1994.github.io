@@ -1,0 +1,810 @@
+body, button, html, input, select, textarea {
+  color: #4d4d4d;
+  font: 14px "Helvetica Neue",Helvetica,sans-serif;
+  line-height: 20px;
+}
+
+
+.newitem-title-wrapper {
+  margin: 4px 10px;
+}
+
+#trello-list-title-input {
+  width: 100%;
+  height: 22px;
+  margin-bottom: 5px;
+  border: none;
+  box-shadow: none;
+}
+
+.list {
+  background:whitesmoke;
+  border-radius: 7px;
+  border:1px solid whitesmoke;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 270px;
+  -ms-flex: 0 0 270px;
+  flex: 0 0 270px;
+  margin: 0 20px;
+  max-height: 100%;
+  position: relative;
+  /*width: 270px;*/
+  max-width: 270px;
+  cursor: pointer;
+}
+
+.list-title {
+  min-height: 19px;
+  padding: 8px 15px 8px 10px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.list-cards {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 4px;
+  padding: 0 4px;
+}
+
+.trello-new-card-title-input {
+  width: 100%;
+  margin-bottom: 4px;
+  overflow: hidden;
+  word-wrap: break-word;
+  resize: none;
+  height: 54px;
+  border: none;
+  box-shadow: none;
+}
+
+.card {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  /*max-width: 300px;
+  min-height: 20px;
+  overflow: auto;*/
+  position: relative;  
+  padding: 6px 8px 4px;
+  height: 100%;
+  width:100%;
+}
+
+.card div {
+  margin-bottom: 5px;
+}
+
+#card-edit {
+  display: none;
+  position: absolute;
+  width: 600px;
+  z-index: 15;
+  top: 50px;
+  left: 50%;
+  margin: 0px 0 0 -300px;
+  padding: 50px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+#card-edit div {
+  margin-bottom: 20px;
+}
+
+#card-edit label {
+  display: inline-block;
+  width: 100px;
+}
+
+#card-edit-inputs input {
+  width: 100%;
+}
+#card-edit-inputs ul{
+  padding: 0px;
+list-style:none;
+}
+#card-edit-inputs ul li{
+  margin-bottom: 10px;
+  }
+  #card-edit-inputs ul li .addTaskFormInputName{
+    width: 100%;
+  }
+  
+  #card-edit-inputs ul li .addTaskFormInputPriority{
+    width: 100%;
+  }
+  #card-edit-inputs ul li .custom-file-label{
+    width:100%;
+  }
+  
+
+#card-edit-close {
+  float: right;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.trash{
+  color:rgba(255, 0, 0, 0.521);    
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-weight:bold;
+}
+
+#Done{
+  background-color: blue;;
+}
+
+
+
+#container-main {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 10;
+}
+
+.navigation-bar{
+  font-family: "Times New Roman", Georgia, Serif;
+  line-height: 60px;
+  font-size: 50px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+#app-title{
+  list-style: none;
+  border-bottom:1px solid rgb(0, 110, 255);
+  width:70%;
+  margin-bottom: 40px;
+  }
+#app-title li{
+  display:inline-block;
+}
+
+#check{
+  float:left;
+  color:grey;  
+  padding-left: 75px;
+  font-size: 14px;
+  margin:10px;
+}
+.fa-arrow-left{
+  color:grey;
+  font-weight: 100;
+}
+
+#check:hover{
+  cursor: pointer;
+}
+#checkTitle{
+  padding-bottom:10px
+}
+#checkTitle select{
+  border:none;
+  font-size:30px;  
+  margin-left: 105px;
+  font-weight:bold;
+}
+
+#search{
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+  border:0px;
+  display:inline-block
+}
+#search:hover{
+  width:85%;
+}
+#search:focus{
+  border:0px
+}
+
+/* The sidebar menu */
+.sidebar {  
+  list-style: none;
+  height: 100%; 
+  width: 6%; 
+  position: fixed; 
+  z-index: 1;
+  top: 0; 
+  left: 0;
+  padding:0px;
+  background-color:#0668e9;
+}
+
+/* The navigation menu links */
+.sidebar li {
+  list-style: none;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar li:hover {
+  color: #f1f1f1;
+}
+
+.fa:hover{
+  cursor: pointer;
+}
+img:hover{
+cursor: pointer;
+}
+
+.fa-instagram{
+  font-size: 60px;
+  margin-bottom: 100px!important;
+  padding-top: 10px!important;
+}
+.fa-instagram:hover{
+  cursor: pointer;
+}
+
+.user{
+  position: absolute;
+  right: 20px;
+  top: 4px;
+  list-style: none;
+  margin-bottom:0px;
+}
+.user li{
+  display: inline-block;
+} 
+
+.user img{
+  width: 42px;
+  border-radius: 10px;
+}
+.user .fa{
+  font-size:25px;
+}
+.user .fa .fa-bell-o {
+  font-size:40px;
+} 
+.user input{
+  font-size:20px;
+  height:32px;
+  width:50%;
+  border:0px;
+}
+
+.stickers{
+  margin-left:5.8%;
+}
+.stickers li{
+  display: inline-block; 
+  list-style:none;
+}
+.stickers li span{
+  font-size: 12px;
+  padding:5px;
+  border-radius:3px;
+}
+.stickers li .user-static{   
+  background-color: rgba(211, 211, 211, 0.39);
+}
+.stickers li .star-static{
+  background-color: rgba(211, 211, 211, 0.39);;
+}
+.stickers li .clock-static{
+  color:rgb(255, 145, 0);
+  background-color:rgba(253, 165, 1, 0.274);
+   
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch-bar{
+  float:right;
+  margin-right: 22px;
+}
+#switch-text{
+  font-size:14px;
+  color:rgb(184, 181, 181);
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#card-edit-close img {
+  width: 20px;
+  height: 20px;
+}
+
+#card-edit-delete {
+  float: left;
+}
+
+#card-edit-submit {
+  float: right;
+}
+
+#board{
+  margin-left:8%;
+}
+
+#trello-title-board {
+  padding: 10px 8px;
+  font-size: 18px;
+  line-height: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+#trello-canvas-board {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap:wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  justify-content: space-between;
+}
+
+#add-task-form {
+  position: fixed;
+  right: 25px;
+  bottom:0px;
+  display: flex;
+  float:right;
+  margin-bottom: 20px;
+  z-index:99;
+}
+
+#add-task-form #add-task {
+  background: #4786FF;
+  border: none;
+  border-radius: 26px;
+  width: 50px;
+  height: 50px;
+  font-family: Lato;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+#add-task-form #add-task:focus {
+  outline: 0;
+}
+#add-task-form #add-task:hover {
+  box-shadow: 0px 4px 20px rgba(71, 134, 255, 0.5);
+  cursor: pointer;
+}
+
+#assignTo{
+  float:right;
+  font-weight:bold;
+}
+
+
+
+
+
+
+ /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+@media (min-width:320px)  {
+.sidebar{
+  list-style: none;
+  height: 100%; 
+  width: 6%; 
+  position: fixed; 
+  z-index: 1;
+  top: 0; 
+  left: 0;
+  padding:0px;
+  background-color:#0668e9;
+}
+.sidebar li{
+  list-style: none;
+  text-decoration: none;
+  font-size: 12px;
+  color:white;
+  display: block;
+}
+.fa:hover{
+  cursor: pointer;
+}
+ .fa-instagram{
+  font-size:20px;
+}
+#app-title{
+  list-style: none;
+  border-bottom:1px solid rgb(0, 110, 255);
+  margin: 0px;
+  padding: 0px;
+  display:inline-block;
+  width:88%;
+  }
+#app-title li{
+  display:inline;
+}
+#check{
+  float:left;
+  color:grey; 
+  font-size: 6px;
+  padding-left: 14px;
+  margin: 0px;
+  padding-top:15px;
+  padding-right:10px
+}
+.fa-arrow-left{
+  color:grey;
+  font-weight: 100;
+}
+
+#check:hover{
+  cursor: pointer;
+}
+#checkTitle{
+  padding: 0px;
+  margin-left: -80px;
+}
+#checkTitle select{
+  border:none;
+  font-size:12px; 
+  font-weight:bold;
+  margin-left:0px;
+}
+#search{
+  display:none;
+}
+
+.user{
+  position: absolute;
+  padding: 0px;
+  right: 0px;
+  top: 0px;
+  list-style: none;
+  margin-bottom:0px;
+}
+.user li{
+  display: inline-block;
+  margin:0px;
+  padding:0px
+} 
+
+.user img{
+  width: 40px;
+  border-radius: 25px;
+  padding-right:5px;
+}
+.user .fa{
+  font-size:13px;
+}
+
+.stickers{
+  margin-left: 0px;
+  padding-left: 35px;
+  display:inline-block;
+}
+.stickers li{
+  display: inline-block; 
+  list-style:none;
+}
+.stickers li span{
+  font-size: 7px;
+  padding:5px;
+  border-radius:3px;
+}
+.stickers li .user-static{   
+  background-color: rgba(211, 211, 211, 0.39);
+}
+.stickers li .star-static{
+  background-color: rgba(211, 211, 211, 0.39);;
+}
+.stickers li .clock-static{
+  color:rgb(255, 145, 0);
+  background-color:rgba(253, 165, 1, 0.274);
+ }
+div .custom-switch{
+  padding:0px;
+  padding-top:5px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch-bar{
+  float:right;
+  margin-right: 5px;
+  margin-left:50px;
+}
+#switch-text{
+  font-size:9px;
+  color:rgb(184, 181, 181);
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#board{
+  margin-left:6%;
+}
+
+#trello-title-board {
+  display:none;
+}
+
+#trello-canvas-board {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+}
+.list {
+  background:whitesmoke;
+  border-radius: 7px;
+  border:1px solid whitesmoke;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 270px;
+  margin: 10px 15px;
+  max-height: 100%;
+  position: relative;
+  max-width: 270px;
+  cursor: pointer;
+}
+
+#card-edit {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 15;
+  top: 0px;
+  left:94%;
+  padding: 25px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+ }
+
+  /* smartphones, Android phones, landscape iPhone */
+ @media (min-width:360px)  { 
+   .switch-bar{
+     margin-left:90px;
+   }
+   .list{
+     margin-left:30px;
+   }
+   #card-edit{
+     left:83%;
+   }
+   .fa-instagram{
+    font-size:30px;
+  }
+   
+   
+  }
+
+   /* smartphones, Android phones, landscape iPhone */
+  @media (min-width:375px)  {
+    .stickers{
+      padding-left:35px;
+    }
+    .switch-bar{
+      margin-left:105px;
+    }
+    #checkTitle select{
+      font-size:13px; 
+    }
+    #check{
+      font-size:8px;
+      padding-left:14px;
+    }
+    #card-edit{
+      left:80%;
+    }
+    .user img{
+      width: 50px;
+    }
+    .user .fa{
+      font-size:16px;
+    }
+    .sidebar{
+      width:6%;
+    }
+    .fa-instagram{
+      font-size:30px;
+    }
+
+   }
+
+   /* smartphones, Android phones, landscape iPhone */
+   @media (min-width:411px)  { 
+
+    .stickers{
+      padding-left:42px;
+    }
+    .switch-bar{
+      margin-left:130px;
+    }
+    #card-edit{
+      left:73%;
+    }
+    /*.sidebar li{
+      padding-bottom:20px;
+    }*/
+    .fa-instagram{
+      font-size:30px;
+    }
+
+    }
+
+
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  @media (min-width:768px)  { 
+    #check{
+      font-size:14px;
+      padding-left:30px;
+    }
+    #checkTitle select{
+      font-size:20px; 
+    }
+    .fa .fa-instagram{
+      font-size:40px;
+    }
+    .sidebar .fa{
+      font-size:22px
+    }
+    
+    
+    .user .fa{
+      font-size:25px;
+    }
+    .user img{
+      width:62px;
+    }
+    .stickers{
+      padding-left:80px;
+    }
+    .switch-bar{
+      margin-left:450px;
+    }
+    #card-edit{
+      width: 80%;
+    left: 50%;
+    top: 10%;
+    }
+
+  }
+
+  /* big landscape tablets, laptops, and desktops */
+  @media (min-width:1024px) { 
+    .stickers{
+      padding-left:95px;
+      margin-top:20px;
+    }
+    .stickers li span{
+      font-size:14px;
+    }
+    .switch-bar{
+      margin-left:530px;
+    }
+    #switch-text{
+      font-size:15px;
+    }
+    #search{
+      -webkit-transition: width .35s ease-in-out;
+      transition: width .35s ease-in-out;
+      border:0px;
+      display:inline-block
+    }
+    #search:hover{
+      width:85%;
+    }
+    #search:focus{
+      border:0px
+    }
+    #card-edit{
+      width: 80%;
+      left: 40%;
+      top: 10%;
+    }
+    /*.sidebar li{
+      padding-bottom: 90px;
+    }*/
+    #checkTitle{
+      margin-left: -150px;
+    }
+    #checkTitle select{
+      font-size:25px;
+    }
+
+   }
+
+ /* hi-res laptops and desktops */
+   @media (min-width:1366px) {
+    #check{
+      padding-left:50px;
+      font-size:18px;
+    }
+    #checkTitle{
+      margin-left:-190px
+    }
+    #checkTitle select{
+      font-size:30px;
+    }
+    .user .fa{
+      font-size:30px;
+    }
+    .user input{
+      font-size:25px;
+    }
+    .user img{
+      width:66px;
+      border-radius:20px;
+      margin-right:5px;
+    }
+    .stickers{
+      padding-left:125px;
+      margin-top:30px;
+    }
+    .switch-bar{
+      margin-left: 800px;
+    }
+    #switch-text{
+      font-size:16px;
+    }
+    .fa .fa-instagram{
+      font-size:50px!important;
+    }
+    #card-edit{
+      width: 50%;
+      left: 50%;
+      top: 10%;
+    }
+
+    }
+
+
