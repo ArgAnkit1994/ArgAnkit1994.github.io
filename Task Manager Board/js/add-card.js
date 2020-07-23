@@ -114,6 +114,7 @@ function addCardTrello(list) {
 				readURL(imgURL);
 			}
 			
+			//file reader to read and upload the attached image, also checking base 64 image
 			function readURL(input) {			
 				if (input.files && input.files[0]) {
 					var reader = new FileReader();

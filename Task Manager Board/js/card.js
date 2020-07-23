@@ -16,14 +16,14 @@ function buildCardNode() {
 /*
  This function is constructor function for card
  */
-function Card(list, title,description,priorityLevel,attachment,status, createdAt,assignTo) { //,id
+function Card(list, title,description,priorityLevel,attachment,status, createdAt,assignTo) { 
 
-	this.id = list.board.getNextId()  //id ? id : 
+	this.id = list.board.getNextId()   
 	this.list = list
 	this.title = title
 	this.description = description
 	this.priorityLevel = typeof priorityLevel!=='undefined'?priorityLevel:undefined
-	this.attachment = typeof attachment!=='undefined'? attachment : undefined  // attachment.files[0]   : undefined  
+	this.attachment = typeof attachment!=='undefined'? attachment : undefined 
 	this.status = typeof status!=='undefined'?status : undefined
 	this.createdAt = typeof createdAt!=='undefined'?createdAt : undefined
 	this.assignTo = typeof assignTo!=='undefined'?assignTo : undefined
@@ -37,7 +37,6 @@ function Card(list, title,description,priorityLevel,attachment,status, createdAt
 	this.surroundStrongTag.cssText = 'fontWeight: 600; display: block; padding : 5px;'
 	this.surroundStrongTag.appendChild(document.createTextNode(this.title));
 	this.titleNode.appendChild(this.surroundStrongTag);
-	//this.titleNode.appendChild(document.createTextNode(this.title));
 
 
 	if(this.description!== 0){
